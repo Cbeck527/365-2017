@@ -1,0 +1,7 @@
+s3_id:
+s3_secret:
+s3_bucket: 365.becker.am
+cloudfront_distribution_id:
+
+site: _site
+index_document: index.html

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script>
+      !function(b,e,c,k,E,r){b.GoogleAnalyticsObject=c;b[c]||(b[c]=function(){(b[c].q=b[c].q||[]).push(arguments)});b[c].l=+new Date;E=e.createElement(k);r=e.getElementsByTagName(k)[0];E.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(E,r)}(window,document,'ga','script');ga('create','UA-51698710-4','auto');ga('send','pageview');
+    </script>
+  </body>
+
+</html>

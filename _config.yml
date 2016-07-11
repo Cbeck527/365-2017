@@ -1,0 +1,7 @@
+title: 365
+description: A photo a day, by Chris Becker
+baseurl: ""
+url: "http://365.becker.am" # the base hostname & protocol for your site
+markdown: kramdown
+source: src
+permalink: /:title/
