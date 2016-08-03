@@ -13,6 +13,7 @@ def build():
     """
     api.local('jekyll build')
 
+
 @api.task
 def push_to_s3():
     """
@@ -28,6 +29,7 @@ def deploy():
     """
     api.execute(build)
     api.execute(push_to_s3)
+
 
 @api.task
 def new_roll(first=None, last=None, start_date=None):
