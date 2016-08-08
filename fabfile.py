@@ -42,7 +42,7 @@ def new_roll(first=None, last=None, start_date=None):
     directory with the proper filename based on the date and number in
     the sequence; e.g. 2016-05-27-1.md
     """
-    if not first and not last and not start_date:
+    if not first or not last or not start_date:
         api.abort('Please specify start date, first, and last photo in the sequence')
 
     draft_filename = os.path.join(os.path.dirname(__file__), 'src/_drafts/template.md')
