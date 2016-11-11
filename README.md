@@ -16,6 +16,8 @@ updates around once a month!
 
 ## Technology
 
+[![Build Status](https://travis-ci.org/Cbeck527/365.svg?branch=master)](https://travis-ci.org/Cbeck527/365)
+
 This website is written in Markdown and SASS, and compiled down to pure HTML/CSS
 with [Jekyll](http://jekyllrb.com).
 
