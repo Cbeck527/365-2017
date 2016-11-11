@@ -8,11 +8,11 @@ addons:
     packages:
       - imagemagick
 
-install: gem install jekyll html-proofer s3_website
+install: bundle install
 
 script:
-  - jekyll build
-  - htmlproofer ./_site
+  - bundle exec jekyll build
+  - bundle exec htmlproofer ./_site
 
 env:
   global:
@@ -26,6 +26,6 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: s3_website push
+  script: bundle exec s3_website push
   on:
     branch: master
