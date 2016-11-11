@@ -8,7 +8,7 @@ addons:
     packages:
       - imagemagick
 
-install: gem install jekyll html-proofer
+install: gem install jekyll html-proofer s3_website
 
 script:
   - jekyll build
@@ -20,3 +20,12 @@ env:
 
 # use container infrastructure on travis
 sudo: false
+
+before_deploy:
+  - mv s3_website.yml.example s3_website.yml
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: s3_website push
+  on:
+    branch: master
