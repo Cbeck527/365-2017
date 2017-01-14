@@ -7,6 +7,6 @@ Jekyll::Hooks.register :posts, :post_write do |post|
     FileUtils.cp post.data['image'], "../../_site/images/thumb/"
   end
   FileUtils.cd("_site/images/thumb/") do
-    system('mogrify -resize "600x600>" ' + post.data["image"])
+    system('mogrify -resize "600x600>" -quality 60% ' + post.data["image"])
   end
 end
