@@ -4,7 +4,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{{ site.description }}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta content="{{ site.description }}" property="og:site_name">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} - {{ page.location }}{% else %}{{ site.description }}{% endif %}" property="og:description">
+  <meta name="twitter:creator" content="@Cbeck527">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} - {{ page.location }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:title" content="{{ page.title }}">
+
+  {% if page.location %}
+  <meta content="{{ site.url }}/images/thumb/{{ page.image }}" property="og:image">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}/images/thumb/{{ page.image }}">
+  {% else %}
+  <meta content="{{ site.url }}/favicon/apple-icon-180x180.png" property="og:image">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="{{ site.url }}/favicon/apple-icon-180x180.png">
+  {% endif %}
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
