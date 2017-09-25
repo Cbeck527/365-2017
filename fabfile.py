@@ -67,6 +67,8 @@ def new_roll(seq_start=None, start_date=None, meta_file=None):
     if meta_file:
         with open(meta_file, 'r') as f:
             meta_info = yaml.load(f)
+    else:
+        meta_info = None
 
     with open(os.path.expanduser(draft_filename)) as inputfile:
         text = inputfile.read()
